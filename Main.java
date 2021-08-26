@@ -16,11 +16,19 @@ public class Main {
             Array[i] = sc.next().split("");
         }
 
-        //a行ｂ列の値をN回出力
+        //a行ｂ列の値を#に変更
         for(int i = 0; i<N; i++){
                 int a = sc.nextInt();
                 int b = sc.nextInt();
-                System.out.println(Array[a][b]);
+                Array[a][b] = "#";
+        }
+
+        //#に置き換えた後の配列Arraiの要素を出力
+        for(int i = 0; i<H; i++){
+            for(int j = 0; j<W; j++){
+                System.out.print(Array[i][j]);
+            }
+            System.out.println("");
         }
     }
 }
