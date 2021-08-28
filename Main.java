@@ -14,20 +14,20 @@ public class Main {
         for(int i = 0; i<W; i++){
             Array[i] = sc.next().split("");
         }
-        //左端のマスの判定
+        //上端のマスの判定
         for(int i = 0; i<H; i++){
-            if(Array[i][1].equals("#")){
-                System.out.println(i + " 0" );
+            if(Array[1][i].equals("#")){
+                System.out.println(0 + " i" );
             }
-            //両方の端を＃で囲まれたマスの判定
+            //上端下端を＃で囲まれたマスの判定
             for(int j = 1; j<W-1;j++){
-                if(Array[i][j-1].equals("#") && Array[i][j+1].equals("#")){
-                    System.out.println(i + " " + j);
+                if(Array[j-1][i].equals("#") && Array[j+1][i].equals("#")){
+                    System.out.println(j + " " + i);
                 }
             }
-            //右端のマスの判定
-            if(Array[i][H-2].equals("#")){
-                System.out.println(i + " " + (H-1));
+            //下端のマスの判定
+            if(Array[H-2][i].equals("#")){
+                System.out.println(H-1 + " " + i);
             }
         }
     }
