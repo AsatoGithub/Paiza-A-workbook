@@ -6,27 +6,37 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int Y = sc.nextInt(); //開始時点のY座標
         int X = sc.nextInt(); //開始座標のX座標
-        int N = sc.nextInt(); //移動の回数
-        String[] direction = new String[N];
+        String D = sc.next(); //向いている方角
         sc.nextLine(); //行送り
+        String direction = sc.nextLine(); //移動の向き
 
-        for(int i = 0; i<N; i++){
-            direction[i] = sc.nextLine();
-            if(direction[i].equals("N")){
-                Y = Y - 1;
-                System.out.println(Y + " " + X);
-            }else if(direction[i].equals("S")){
-                Y = Y + 1;
-                System.out.println(Y + " " + X);
-            }else if(direction[i].equals("E")){
-                X = X + 1;
-                System.out.println(Y + " " + X);
-            }else if(direction[i].equals("W")){
-                X = X - 1;
-                System.out.println(Y + " " + X);
+        //向いている方角から移動したときの座標変化
+            if(D.equals("N")){
+                if(direction.equals("R")){
+                    X = X + 1;
+                }else if(direction.equals("L")){
+                    X = X - 1;
+                }
+            }else if(D.equals("E")){
+                if(direction.equals("R")){
+                    Y = Y + 1;
+                }else if(direction.equals("L")){
+                    Y = Y - 1;
+                }
+            }else if(D.equals("W")){
+                if(direction.equals("R")){
+                    Y = Y - 1;
+                }else if(direction.equals("L")){
+                    Y = Y + 1;
+                }
+            }else if(D.equals("S")){
+                if(direction.equals("R")){
+                    X = X - 1;
+                }else if(direction.equals("L")){
+                    X = X + 1;
+                }
             }
 
-        }
-
+        System.out.println(Y + " " + X); //Y,X座標出力
     }
 }
