@@ -1,18 +1,31 @@
 import java.util.*;
 
-
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] list = new int[N];
+        int n = sc.nextInt();
+        int k = sc.nextInt();
         int answer = 0;
 
-        for(int i = 0; i<N; i++){
-            list[i] = sc.nextInt();
-            answer = answer + list[i];
-            System.out.println(answer);
+        if(n % 3 == 1){
+            if(k % 3 == 0){
+                answer = -1;
+            }else{
+                answer = 0;
+            }
+        }else if(n % 3 == 2){
+            if(k % 3 == 0){
+                answer = -1;
+            }else{
+                answer = 0;
+            }
+            }else{
+                if(k % 3 == 0){
+                answer = -1;
+            }else{
+                answer = 0;
+            }
         }
-
+        System.out.println(answer);
     }
 }
