@@ -9,17 +9,18 @@ public class Main{
 		System.out.println();
 	}
 
-	static void insertion_sort(int a[], int n){
-		for(int i = 1; i < n; i++){
-			int x = a[i];
-			int j = i-1;
-
-			while(j >= 0 && a[j] > x){
-				a[j+1] = a[j];
-				j--;
+	static void selection_sort(int a[], int n){
+		for(int i = 0; i < n-1; i++){
+			int min_index = i;
+			for(int j = i+1; j < n; j++){
+				if(a[j] < a[min_index]){
+					min_index = j;
+				}
 			}
 
-			a[j+1] = x;
+			int min = a[min_index];
+			a[min_index] = a[i];
+			a[i] = min;
 
 			print(a, n);
 		}
@@ -35,6 +36,6 @@ public class Main{
 			a[i] = sc.nextInt();
 		}
 
-		insertion_sort(a, n);
+		selection_sort(a, n);
 	}
 }
